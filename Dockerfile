@@ -14,12 +14,13 @@ RUN apt-get install -q -y python2.7-dev
 RUN apt-get install -q -y libcppunit-dev
 RUN apt-get install -q -y libunwind7-dev
 RUN apt-get install -q -y libcurl4-gnutls-dev
+RUN useradd jenkins
+RUN echo 'jenkins:docker' | chpasswd
 RUN mkdir /var/run/sshd
 RUN echo 'root:docker' | chpasswd
 RUN apt-get install -q -y wget
-RUN wget www.motorlogy.com/apache/mesos/0.14.2/mesos-0.14.2.tar.gz -P /root
-RUN tar xf mesos-0.14.2.tar.gz
-RUN cd mesos-0.14.2
+RUN wget www.motorlogy.com/apache/mesos/0.15.0/mesos-0.15.0.tar.gz -P /home/jenkins
+RUN tar xf /home/jenkins/mesos-0.15.0.tar.gz
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
