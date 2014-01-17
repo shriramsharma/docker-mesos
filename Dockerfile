@@ -14,6 +14,7 @@ RUN apt-get install -q -y python2.7-dev
 RUN apt-get install -q -y libcppunit-dev
 RUN apt-get install -q -y libunwind7-dev
 RUN apt-get install -q -y libcurl4-gnutls-dev
+RUN apt-get install -q -y libsasl2-dev
 RUN useradd jenkins
 RUN echo 'jenkins:docker' | chpasswd
 RUN mkdir /var/run/sshd
