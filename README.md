@@ -20,4 +20,6 @@ Apache Mesos Docker
    `bin/mesos-master.sh`
 4. To launch a slave
    `bin/mesos-slave.sh --master=<ip_address>:5050`
- 
+
+
+Check Readme here for more info -> https://github.com/apache/mesos/blob/master/docs/getting-started.md 
